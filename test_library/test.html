@@ -36,6 +36,9 @@
             <li>
                     <a class="function" href="#mul">mul</a>
             </li>
+            <li>
+                    <a class="function" href="#add_mul">add_mul</a>
+            </li>
     </ul>
 
 
@@ -57,7 +60,7 @@
 
                         <label class="view-source-button" for="mod-test-view-source"><span>View Source</span></label>
 
-                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos"> 1</span></a><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos"> 1</span></a><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span><span class="n">b</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 </span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a><span class="w">    </span><span class="sd">"""두 정수를 더하는 함수입니다.</span>
 </span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a>
 </span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a><span class="sd">    Args:</span>
@@ -69,7 +72,7 @@
 </span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a><span class="sd">    """</span>
 </span><span id="L-11"><a href="#L-11"><span class="linenos">11</span></a>    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 </span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a>
-</span><span id="L-13"><a href="#L-13"><span class="linenos">13</span></a><span class="k">def</span><span class="w"> </span><span class="nf">mul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+</span><span id="L-13"><a href="#L-13"><span class="linenos">13</span></a><span class="k">def</span><span class="w"> </span><span class="nf">mul</span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span><span class="n">b</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 </span><span id="L-14"><a href="#L-14"><span class="linenos">14</span></a><span class="w">    </span><span class="sd">"""두 정수를 곱하는 함수입니다.</span>
 </span><span id="L-15"><a href="#L-15"><span class="linenos">15</span></a>
 </span><span id="L-16"><a href="#L-16"><span class="linenos">16</span></a><span class="sd">    Args:</span>
@@ -80,6 +83,23 @@
 </span><span id="L-21"><a href="#L-21"><span class="linenos">21</span></a><span class="sd">        int: a와 b를 곱한 결과</span>
 </span><span id="L-22"><a href="#L-22"><span class="linenos">22</span></a><span class="sd">    """</span>
 </span><span id="L-23"><a href="#L-23"><span class="linenos">23</span></a>    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+</span><span id="L-24"><a href="#L-24"><span class="linenos">24</span></a>
+</span><span id="L-25"><a href="#L-25"><span class="linenos">25</span></a><span class="k">def</span><span class="w"> </span><span class="nf">add_mul</span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span><span class="n">b</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span><span class="nb">int</span><span class="p">]:</span>
+</span><span id="L-26"><a href="#L-26"><span class="linenos">26</span></a><span class="w">    </span><span class="sd">"""두 정수를 곱하는 함수입니다.</span>
+</span><span id="L-27"><a href="#L-27"><span class="linenos">27</span></a>
+</span><span id="L-28"><a href="#L-28"><span class="linenos">28</span></a><span class="sd">    Args:</span>
+</span><span id="L-29"><a href="#L-29"><span class="linenos">29</span></a><span class="sd">        a: 첫번째 정수</span>
+</span><span id="L-30"><a href="#L-30"><span class="linenos">30</span></a><span class="sd">        b: 두번째 정수</span>
+</span><span id="L-31"><a href="#L-31"><span class="linenos">31</span></a>
+</span><span id="L-32"><a href="#L-32"><span class="linenos">32</span></a><span class="sd">    Returns:</span>
+</span><span id="L-33"><a href="#L-33"><span class="linenos">33</span></a><span class="sd">        tuple[int, int]: 아래 요소를 담은 튜플.</span>
+</span><span id="L-34"><a href="#L-34"><span class="linenos">34</span></a><span class="sd">            - added (int): add함수 결과.</span>
+</span><span id="L-35"><a href="#L-35"><span class="linenos">35</span></a><span class="sd">            - muled (int): mul함수 결과</span>
+</span><span id="L-36"><a href="#L-36"><span class="linenos">36</span></a><span class="sd">    """</span>
+</span><span id="L-37"><a href="#L-37"><span class="linenos">37</span></a>    <span class="n">added</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</span><span id="L-38"><a href="#L-38"><span class="linenos">38</span></a>    <span class="n">muled</span> <span class="o">=</span> <span class="n">mul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</span><span id="L-39"><a href="#L-39"><span class="linenos">39</span></a>
+</span><span id="L-40"><a href="#L-40"><span class="linenos">40</span></a>    <span class="k">return</span> <span class="n">added</span><span class="p">,</span><span class="n">muled</span>
 </span></pre></div>
 
 
@@ -89,13 +109,13 @@
 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">add</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">a</span>, </span><span class="param"><span class="n">b</span></span><span class="return-annotation">):</span></span>
+        <span class="name">add</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">a</span><span class="p">:</span> <span class="nb">int</span>, </span><span class="param"><span class="n">b</span><span class="p">:</span> <span class="nb">int</span></span><span class="return-annotation">) -> <span class="nb">int</span>:</span></span>
 
                 <label class="view-source-button" for="add-view-source"><span>View Source</span></label>
 
     </div>
     <a class="headerlink" href="#add"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="add-2"><a href="#add-2"><span class="linenos"> 2</span></a><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="add-2"><a href="#add-2"><span class="linenos"> 2</span></a><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span><span class="n">b</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 </span><span id="add-3"><a href="#add-3"><span class="linenos"> 3</span></a><span class="w">    </span><span class="sd">"""두 정수를 더하는 함수입니다.</span>
 </span><span id="add-4"><a href="#add-4"><span class="linenos"> 4</span></a>
 </span><span id="add-5"><a href="#add-5"><span class="linenos"> 5</span></a><span class="sd">    Args:</span>
@@ -126,13 +146,13 @@
 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">mul</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">a</span>, </span><span class="param"><span class="n">b</span></span><span class="return-annotation">):</span></span>
+        <span class="name">mul</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">a</span><span class="p">:</span> <span class="nb">int</span>, </span><span class="param"><span class="n">b</span><span class="p">:</span> <span class="nb">int</span></span><span class="return-annotation">) -> <span class="nb">int</span>:</span></span>
 
                 <label class="view-source-button" for="mul-view-source"><span>View Source</span></label>
 
     </div>
     <a class="headerlink" href="#mul"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="mul-14"><a href="#mul-14"><span class="linenos">14</span></a><span class="k">def</span><span class="w"> </span><span class="nf">mul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="mul-14"><a href="#mul-14"><span class="linenos">14</span></a><span class="k">def</span><span class="w"> </span><span class="nf">mul</span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span><span class="n">b</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 </span><span id="mul-15"><a href="#mul-15"><span class="linenos">15</span></a><span class="w">    </span><span class="sd">"""두 정수를 곱하는 함수입니다.</span>
 </span><span id="mul-16"><a href="#mul-16"><span class="linenos">16</span></a>
 </span><span id="mul-17"><a href="#mul-17"><span class="linenos">17</span></a><span class="sd">    Args:</span>
@@ -154,6 +174,50 @@
 
 <p>Returns:
     int: a와 b를 곱한 결과</p>
+</div>
+
+
+                </section>
+                <section id="add_mul">
+                            <input id="add_mul-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">add_mul</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">a</span><span class="p">:</span> <span class="nb">int</span>, </span><span class="param"><span class="n">b</span><span class="p">:</span> <span class="nb">int</span></span><span class="return-annotation">) -> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>:</span></span>
+
+                <label class="view-source-button" for="add_mul-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#add_mul"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="add_mul-26"><a href="#add_mul-26"><span class="linenos">26</span></a><span class="k">def</span><span class="w"> </span><span class="nf">add_mul</span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span><span class="n">b</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span><span class="nb">int</span><span class="p">]:</span>
+</span><span id="add_mul-27"><a href="#add_mul-27"><span class="linenos">27</span></a><span class="w">    </span><span class="sd">"""두 정수를 곱하는 함수입니다.</span>
+</span><span id="add_mul-28"><a href="#add_mul-28"><span class="linenos">28</span></a>
+</span><span id="add_mul-29"><a href="#add_mul-29"><span class="linenos">29</span></a><span class="sd">    Args:</span>
+</span><span id="add_mul-30"><a href="#add_mul-30"><span class="linenos">30</span></a><span class="sd">        a: 첫번째 정수</span>
+</span><span id="add_mul-31"><a href="#add_mul-31"><span class="linenos">31</span></a><span class="sd">        b: 두번째 정수</span>
+</span><span id="add_mul-32"><a href="#add_mul-32"><span class="linenos">32</span></a>
+</span><span id="add_mul-33"><a href="#add_mul-33"><span class="linenos">33</span></a><span class="sd">    Returns:</span>
+</span><span id="add_mul-34"><a href="#add_mul-34"><span class="linenos">34</span></a><span class="sd">        tuple[int, int]: 아래 요소를 담은 튜플.</span>
+</span><span id="add_mul-35"><a href="#add_mul-35"><span class="linenos">35</span></a><span class="sd">            - added (int): add함수 결과.</span>
+</span><span id="add_mul-36"><a href="#add_mul-36"><span class="linenos">36</span></a><span class="sd">            - muled (int): mul함수 결과</span>
+</span><span id="add_mul-37"><a href="#add_mul-37"><span class="linenos">37</span></a><span class="sd">    """</span>
+</span><span id="add_mul-38"><a href="#add_mul-38"><span class="linenos">38</span></a>    <span class="n">added</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</span><span id="add_mul-39"><a href="#add_mul-39"><span class="linenos">39</span></a>    <span class="n">muled</span> <span class="o">=</span> <span class="n">mul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</span><span id="add_mul-40"><a href="#add_mul-40"><span class="linenos">40</span></a>
+</span><span id="add_mul-41"><a href="#add_mul-41"><span class="linenos">41</span></a>    <span class="k">return</span> <span class="n">added</span><span class="p">,</span><span class="n">muled</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>두 정수를 곱하는 함수입니다.</p>
+
+<p>Args:
+    a: 첫번째 정수
+    b: 두번째 정수</p>
+
+<p>Returns:
+    tuple[int, int]: 아래 요소를 담은 튜플.
+        - added (int): add함수 결과.
+        - muled (int): mul함수 결과</p>
 </div>
 
 
